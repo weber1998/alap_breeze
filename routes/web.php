@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IngatlanokController;
+use App\Http\Controllers\KategoriakController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::get('/all', [IngatlanokController::class, 'all']); // 1
-Route::post('/new', [IngatlanokController::class, 'new']); // 2
-Route::delete('/del', [IngatlanokController::class, 'del']); // 3
+// ingatlan
+Route::get('/indexIng', [IngatlanokController::class, 'index']);
+Route::get('/showIng', [IngatlanokController::class, 'show']);
+Route::get('/allIng', [IngatlanokController::class, 'all']); // 1
+Route::post('/newIng', [IngatlanokController::class, 'new']); // 2
+Route::delete('/delIng', [IngatlanokController::class, 'del']); // 3
 
+// kategoria
+Route::get('/indexKat', [KategoriakController::class, 'index']);
+Route::get('/showKat', [KategoriakController::class, 'show']);
+Route::delete('/delKat', [KategoriakController::class, 'del']);
 
 require __DIR__.'/auth.php';

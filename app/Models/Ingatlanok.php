@@ -19,4 +19,6 @@ class Ingatlanok extends Model
         'kepUrl'
     ];
     protected $primaryKey = "id";
+    public $timestamps = false;
+
 }
