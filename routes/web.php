@@ -3,6 +3,7 @@
 use App\Http\Controllers\IngatlanokController;
 use App\Http\Controllers\KategoriakController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,9 @@ Route::delete('/delIng', [IngatlanokController::class, 'del']); // 3
 Route::get('/indexKat', [KategoriakController::class, 'index']);
 Route::get('/showKat', [KategoriakController::class, 'show']);
 Route::delete('/delKat', [KategoriakController::class, 'del']);
+
+Route::get('/ingatlanok', function() {
+    return View::make('pages.ingatlanok');
+});
 
 require __DIR__.'/auth.php';

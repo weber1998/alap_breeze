@@ -9,8 +9,10 @@ class IngatlanokController {
         $("#ingatlanokGomb").on("click", () => {
             let vegpont = "all";
             aszinkron.adatBe(vegpont, this.megjelenit);
+            console.log('gomb');
         });
     }
+
     megjelenit(adat) {
         new IngatlanokView(adat, $("#ingatlanokHelye"));
     }
