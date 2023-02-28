@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IngatlanokController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/all', [IngatlanokController::class, 'all']); // 1
+Route::post('/new', [IngatlanokController::class, 'new']); // 2
+Route::delete('/del', [IngatlanokController::class, 'del']); // 3
+
 
 require __DIR__.'/auth.php';
